@@ -19,7 +19,7 @@ namespace Dao
             string sql;
 
 
-            if (destinatario.Id == 0)
+            if (destinatario.GetId() == 0)
             {
                 // MUITA ATENÇÃO nos espaçamentos entre comandos.
                 sql = "INSERT INTO " + TABELA
@@ -61,7 +61,7 @@ namespace Dao
                 cmd.Parameters.AddWithValue("@email",
                     destinatario.Email);
                 cmd.Parameters.AddWithValue("@id",
-                    destinatario.Id);
+                    destinatario.GetId());
             }
 
             // Preparação da consulta.
@@ -165,7 +165,7 @@ namespace Dao
         {
             Destinatario resposta = null;
 
-            if (destinatario.Id != 0)
+            if (destinatario.GetId() != 0)
             {
                 MySqlCommand cmd;
 
@@ -178,7 +178,7 @@ namespace Dao
 
                 // Inserção de valores nos parâmetros.
                 cmd.Parameters.AddWithValue("@id",
-                    destinatario.Id);
+                    destinatario.GetId());
 
                 cmd.Prepare();
 

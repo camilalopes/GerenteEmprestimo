@@ -21,30 +21,37 @@ namespace Entidade
 
         public EmprestimoAuxiliar(int id, bool entregue)
         {
-            Id = id;
+            SetId(id);
             Entregue = entregue;
         }
 
         public EmprestimoAuxiliar(int id)
         {
-            Id = id;
+            SetId(id);
         }
 
         public EmprestimoAuxiliar(int id, DateTime dataEmprestimo, bool entregue, string destinatario, string item)
         {
-            Id = id;
+
+
+            SetId(id);          
             DataEmprestimo = dataEmprestimo;
             Entregue = entregue;
             Destinatario = destinatario;
             Item = item;
         }
 
-        public int Id
-        {
-            get { return id; }
-            set { id = value; }
 
-        }
+
+         public void SetId(int id)
+         {
+             this.id = id;
+         }
+
+         public int GetId()
+         {
+             return id;
+         }
 
         public DateTime DataEmprestimo
         {

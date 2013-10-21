@@ -20,7 +20,8 @@ namespace Entidade
       
         public Item(int id)
         {
-            Id = id;
+            
+            SetId(id);
         }
         
         public Item(string descricao)
@@ -30,15 +31,19 @@ namespace Entidade
 
         public Item(int id, string descricao)
         {
-            Id = id;
+            
+            SetId(id);
             Descricao = descricao;
         }
 
-        
-        public int Id
+        public void SetId(int id)
         {
-            get { return id; }
-            set { id = value; }
+            this.id = id;
+        }
+
+        public int GetId()
+        {
+            return id;
         }
 
         public string Descricao

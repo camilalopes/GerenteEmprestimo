@@ -77,3 +77,16 @@ F:\GerenteDeEmprestimos2\GerentedeEmprestimos\obj\Debug\GerentedeEmprestimos.csp
 F:\GerenteDeEmprestimos2\GerentedeEmprestimos\bin\Debug\GerentedeEmprestimos.exe
 F:\GerenteDeEmprestimos2\GerentedeEmprestimos\bin\Debug\GerentedeEmprestimos.pdb
 F:\GerenteDeEmprestimos2\GerentedeEmprestimos\bin\Debug\MySql.Data.dll
+C:\Users\Camila\Desktop\GerenteEmprestimo\GerenteDeEmprestimos2\GerentedeEmprestimos\bin\Debug\GerentedeEmprestimos.exe.config
+C:\Users\Camila\Desktop\GerenteEmprestimo\GerenteDeEmprestimos2\GerentedeEmprestimos\obj\Debug\GerentedeEmprestimos.exe
+C:\Users\Camila\Desktop\GerenteEmprestimo\GerenteDeEmprestimos2\GerentedeEmprestimos\obj\Debug\GerentedeEmprestimos.pdb
+C:\Users\Camila\Desktop\GerenteEmprestimo\GerenteDeEmprestimos2\GerentedeEmprestimos\bin\Debug\GerentedeEmprestimos.exe
+C:\Users\Camila\Desktop\GerenteEmprestimo\GerenteDeEmprestimos2\GerentedeEmprestimos\bin\Debug\GerentedeEmprestimos.pdb
+C:\Users\Camila\Desktop\GerenteEmprestimo\GerenteDeEmprestimos2\GerentedeEmprestimos\obj\Debug\GerentedeEmprestimos.csprojResolveAssemblyReference.cache
+C:\Users\Camila\Desktop\GerenteEmprestimo\GerenteDeEmprestimos2\GerentedeEmprestimos\obj\Debug\GerentedeEmprestimos.CadastroUsuario.resources
+C:\Users\Camila\Desktop\GerenteEmprestimo\GerenteDeEmprestimos2\GerentedeEmprestimos\obj\Debug\GerentedeEmprestimos.FormDestinatario.resources
+C:\Users\Camila\Desktop\GerenteEmprestimo\GerenteDeEmprestimos2\GerentedeEmprestimos\obj\Debug\GerentedeEmprestimos.FormItem.resources
+C:\Users\Camila\Desktop\GerenteEmprestimo\GerenteDeEmprestimos2\GerentedeEmprestimos\obj\Debug\GerentedeEmprestimos.FormPrincipal.resources
+C:\Users\Camila\Desktop\GerenteEmprestimo\GerenteDeEmprestimos2\GerentedeEmprestimos\obj\Debug\GerentedeEmprestimos.FormUsuario.resources
+C:\Users\Camila\Desktop\GerenteEmprestimo\GerenteDeEmprestimos2\GerentedeEmprestimos\obj\Debug\GerentedeEmprestimos.Properties.Resources.resources
+C:\Users\Camila\Desktop\GerenteEmprestimo\GerenteDeEmprestimos2\GerentedeEmprestimos\obj\Debug\GerentedeEmprestimos.csproj.GenerateResource.Cache

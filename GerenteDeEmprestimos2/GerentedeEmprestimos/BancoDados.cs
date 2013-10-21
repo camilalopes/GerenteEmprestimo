@@ -20,7 +20,7 @@ namespace Dao
                 string servidor = "127.0.0.1";
                 string banco = BANCO;
                 string usuario = "root";
-                string senha = "";
+                string senha = "cabanbina";
 
                 // String de conexão.
                 string strConexao = "SERVER=" + servidor

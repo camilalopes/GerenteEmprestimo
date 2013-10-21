@@ -266,7 +266,7 @@ namespace GerentedeEmprestimos
                     = dgvDestinatario.DataSource as ArrayList;
 
                 Destinatario destinatarioClicado = (Destinatario)destinatarios[e.RowIndex];
-                id_destinatario = destinatarioClicado.Id;
+                id_destinatario = destinatarioClicado.GetId();
                
                 Destinatario destinatario = DestinatarioDao.buscarPorId(new Destinatario(id_destinatario));
 
@@ -285,7 +285,7 @@ namespace GerentedeEmprestimos
                      = dgvDestinatario.DataSource as ArrayList;
 
                 Destinatario destinatarioClicado = (Destinatario)destinatarios[e.RowIndex];
-                id_destinatario = destinatarioClicado.Id;
+                id_destinatario = destinatarioClicado.GetId();
 
                 Destinatario destinatario = DestinatarioDao.buscarPorId(new Destinatario(id_destinatario));
 

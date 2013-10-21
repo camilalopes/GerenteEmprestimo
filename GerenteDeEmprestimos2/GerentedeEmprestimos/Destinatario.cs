@@ -27,12 +27,12 @@ namespace Entidade
 
         public Destinatario(int id)
         {
-            Id = id;
+            SetId(id);
         }
 
         public Destinatario(int id, string rg, string nome, string telefone, string email)
         {
-            Id = id;
+            SetId(id);
             Rg = rg;
             Nome = nome;
             Telefone = telefone;
@@ -40,11 +40,14 @@ namespace Entidade
 
         }
 
-        public int Id
+        public void SetId(int id)
         {
-            get { return id; }
-            set { id = value; }
+            this.id = id;
+        }
 
+        public int GetId()
+        {
+            return id;
         }
 
         public string Rg

@@ -14,14 +14,14 @@ namespace GerentedeEmprestimos
 {
     public partial class FormUsuario : Form
     {
-        private FormPrincipal fp;
+       private FormPrincipal fp;
 
-        public FormUsuario(FormPrincipal fp)
+        /*public FormUsuario(FormPrincipal fp)
         {
             InitializeComponent();
 
             this.fp = fp;
-        }
+        }*/
 
 
         public FormUsuario()
@@ -45,7 +45,7 @@ namespace GerentedeEmprestimos
                 fp = new FormPrincipal();
                 fp.AdmAux = resposta.Adm;
                 fp.Show();
-                this.Visible = false;
+               
 
             }
             else
@@ -61,12 +61,13 @@ namespace GerentedeEmprestimos
             {
                 Usuario resposta = UsuarioDao.buscarUsuario(new Usuario(txtLogin.Text, txtSenha.Text));
 
+
                 if (resposta != null)
                 {
 
-                    FormPrincipal fp = new FormPrincipal();
+                    fp = new FormPrincipal();
+                    fp.AdmAux = resposta.Adm;
                     fp.Show();
-                    this.Visible = false;
                     
                 }
                 else

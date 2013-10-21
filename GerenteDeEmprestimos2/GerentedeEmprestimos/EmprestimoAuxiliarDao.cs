@@ -19,7 +19,7 @@ namespace GerentedeEmprestimos
             MySqlCommand cmd;
             string sql;
 
-            if (eAux.Id == 0)
+            if (eAux.GetId() == 0)
             {
                 sql = "INSERT INTO " + TABELA + " VALUES(default, @dataemprestimo, @entregue, @destinatario, @item);";
 
@@ -48,7 +48,7 @@ namespace GerentedeEmprestimos
                 cmd.Parameters.AddWithValue("@entregue",
                     eAux.Entregue);
                 cmd.Parameters.AddWithValue("@id",
-                    eAux.Id);
+                    eAux.GetId());
             }
 
             // Preparação da consulta.
@@ -95,7 +95,7 @@ namespace GerentedeEmprestimos
         {
             EmprestimoAuxiliar resposta = null;
 
-            if (eAux.Id != 0)
+            if (eAux.GetId() != 0)
             {
                 MySqlCommand cmd;
 
@@ -108,7 +108,7 @@ namespace GerentedeEmprestimos
 
                 // Inserção de valores nos parâmetros.
                 cmd.Parameters.AddWithValue("@id",
-                    eAux.Id);
+                    eAux.GetId());
 
                 cmd.Prepare();
 

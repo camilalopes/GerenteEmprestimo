@@ -210,7 +210,7 @@ namespace GerentedeEmprestimos
 
                 Item itemClicado = (Item)items[e.RowIndex];
 
-                id_item = itemClicado.Id;
+                id_item = itemClicado.GetId();
             
                 fp.preencherTxtNome((String)ItemDao.buscarPorId(new Item(id_item)).Descricao);
 
@@ -229,7 +229,7 @@ namespace GerentedeEmprestimos
                      = dgvItem.DataSource as ArrayList;
 
                 Item itemClicado = (Item)items[e.RowIndex];
-                id_item = itemClicado.Id;
+                id_item = itemClicado.GetId();
 
                 Item item = ItemDao.buscarPorId(new Item(id_item));
 

@@ -41,6 +41,8 @@
             this.btCadastrarUsuario = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.cboTipo = new System.Windows.Forms.ComboBox();
+            this.dgvUsuario = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvUsuario)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -96,7 +98,7 @@
             // txtNome
             // 
             this.txtNome.Location = new System.Drawing.Point(13, 34);
-            this.txtNome.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtNome.Margin = new System.Windows.Forms.Padding(4);
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(261, 22);
             this.txtNome.TabIndex = 5;
@@ -104,7 +106,7 @@
             // txtTelefone
             // 
             this.txtTelefone.Location = new System.Drawing.Point(13, 82);
-            this.txtTelefone.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtTelefone.Margin = new System.Windows.Forms.Padding(4);
             this.txtTelefone.Name = "txtTelefone";
             this.txtTelefone.Size = new System.Drawing.Size(261, 22);
             this.txtTelefone.TabIndex = 6;
@@ -112,7 +114,7 @@
             // txtLogin
             // 
             this.txtLogin.Location = new System.Drawing.Point(13, 178);
-            this.txtLogin.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtLogin.Margin = new System.Windows.Forms.Padding(4);
             this.txtLogin.Name = "txtLogin";
             this.txtLogin.Size = new System.Drawing.Size(261, 22);
             this.txtLogin.TabIndex = 7;
@@ -120,7 +122,7 @@
             // txtSenha
             // 
             this.txtSenha.Location = new System.Drawing.Point(13, 226);
-            this.txtSenha.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtSenha.Margin = new System.Windows.Forms.Padding(4);
             this.txtSenha.Name = "txtSenha";
             this.txtSenha.PasswordChar = '*';
             this.txtSenha.Size = new System.Drawing.Size(261, 22);
@@ -129,16 +131,16 @@
             // txtEmail
             // 
             this.txtEmail.Location = new System.Drawing.Point(13, 130);
-            this.txtEmail.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtEmail.Margin = new System.Windows.Forms.Padding(4);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(261, 22);
             this.txtEmail.TabIndex = 9;
             // 
             // btCadastrarUsuario
             // 
-            this.btCadastrarUsuario.Location = new System.Drawing.Point(106, 337);
+            this.btCadastrarUsuario.Location = new System.Drawing.Point(12, 318);
             this.btCadastrarUsuario.Name = "btCadastrarUsuario";
-            this.btCadastrarUsuario.Size = new System.Drawing.Size(94, 34);
+            this.btCadastrarUsuario.Size = new System.Drawing.Size(94, 24);
             this.btCadastrarUsuario.TabIndex = 10;
             this.btCadastrarUsuario.Text = "Cadastrar";
             this.btCadastrarUsuario.UseVisualStyleBackColor = true;
@@ -161,11 +163,21 @@
             this.cboTipo.Size = new System.Drawing.Size(261, 24);
             this.cboTipo.TabIndex = 12;
             // 
+            // dgvUsuario
+            // 
+            this.dgvUsuario.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.dgvUsuario.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvUsuario.Location = new System.Drawing.Point(299, 14);
+            this.dgvUsuario.Name = "dgvUsuario";
+            this.dgvUsuario.Size = new System.Drawing.Size(362, 281);
+            this.dgvUsuario.TabIndex = 13;
+            // 
             // CadastroUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(301, 383);
+            this.ClientSize = new System.Drawing.Size(673, 354);
+            this.Controls.Add(this.dgvUsuario);
             this.Controls.Add(this.cboTipo);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.btCadastrarUsuario);
@@ -180,11 +192,12 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "CadastroUsuario";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CadastroUsuario";
             this.Load += new System.EventHandler(this.CadastroUsuario_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvUsuario)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -205,5 +218,6 @@
         private System.Windows.Forms.Button btCadastrarUsuario;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.ComboBox cboTipo;
+        private System.Windows.Forms.DataGridView dgvUsuario;
     }
 }

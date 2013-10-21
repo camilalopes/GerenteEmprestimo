@@ -19,7 +19,7 @@ namespace Dao
             MySqlCommand cmd;
             string sql;
 
-            if (item.Id == 0)
+            if (item.GetId() == 0)
             {
                 sql = "INSERT INTO " + TABELA
                     + " VALUES (default, @descricao);";
@@ -48,7 +48,7 @@ namespace Dao
                 cmd.Parameters.AddWithValue("@descricao",
                     item.Descricao);
                 cmd.Parameters.AddWithValue("@id",
-                    item.Id);
+                    item.GetId());
             }
 
             // Preparação da consulta.
@@ -161,7 +161,7 @@ namespace Dao
         {
             Item resposta = null;
 
-            if (item.Id != 0)
+            if (item.GetId() != 0)
             {
                 MySqlCommand cmd;
 
@@ -174,7 +174,7 @@ namespace Dao
 
                 // Inserção de valores nos parâmetros.
                 cmd.Parameters.AddWithValue("@id",
-                    item.Id);
+                    item.GetId());
 
                 cmd.Prepare();
 
