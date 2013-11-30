@@ -56,7 +56,7 @@ namespace GerentedeEmprestimos
             this.dgvItem.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvItem.Location = new System.Drawing.Point(12, 12);
             this.dgvItem.Name = "dgvItem";
-            this.dgvItem.Size = new System.Drawing.Size(294, 237);
+            this.dgvItem.Size = new System.Drawing.Size(291, 219);
             this.dgvItem.TabIndex = 0;
             this.dgvItem.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvItem_CellClick);
             this.dgvItem.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvItem_CellDoubleClick);
@@ -72,6 +72,7 @@ namespace GerentedeEmprestimos
             this.btExcluir.TabIndex = 10;
             this.btExcluir.Text = "Excluir";
             this.btExcluir.UseVisualStyleBackColor = true;
+            this.btExcluir.Click += new System.EventHandler(this.btExcluir_Click);
             // 
             // btAlterar
             // 
@@ -141,14 +142,32 @@ namespace GerentedeEmprestimos
 
         }
 
+
+
         private void FormItem_Load(object sender, EventArgs e)
         {
+
+
+
             dgvItem.DataSource = ItemDao.buscarItem(new Item());
+
+
+            //verificar se tem algum dado antes de redimensionar
+            if (ItemDao.buscarItem(new Item()) != null)
+            {
+                dgvItem.Columns[0].Width = 251;
+            }            
+         
 
         }
         public void Restaurar()
         {
             txtNomeItem.Text = "";
+            /*verificar se tem algum dado antes de redimensionar
+            if (ItemDao.buscarItem(new Item()) != null)
+            {
+                dgvItem.Columns[0].Width = 251;
+            } */
         }
         
 
@@ -189,9 +208,6 @@ namespace GerentedeEmprestimos
                     dgvItem.DataSource = ItemDao.buscarItem(new Item());
 
                 }
-
-                
-
  
             }
 
@@ -244,6 +260,12 @@ namespace GerentedeEmprestimos
 
             dgvItem.DataSource = ItemDao.buscarItem(new Item());
 
+            Restaurar();
+        }
+
+        private void btExcluir_Click(object sender, EventArgs e)
+        {
+            ItemDao.excluirItem(new Item(id_item));
             Restaurar();
         }
     }

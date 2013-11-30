@@ -40,16 +40,9 @@ namespace GerentedeEmprestimos
         public int id_emprestimo;
         private ToolStripMenuItem lOGOUTToolStripMenuItem;
         private ToolStripMenuItem sairToolStripMenuItem;
+        private ToolStripMenuItem rELATÓRIOToolStripMenuItem;
+        private ToolStripMenuItem empréstimosToolStripMenuItem;
         public bool admAux;
-
-        /*   private FormUsuario fu;
-
-           public FormPrincipal(FormUsuario fu)
-           {
-               InitializeComponent();
-
-               this.fu = fu;
-           }*/
 
         public bool AdmAux
         {
@@ -75,6 +68,8 @@ namespace GerentedeEmprestimos
             this.visualizarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.USUÁRIOToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.lOGOUTToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.sairToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lbDestinatario = new System.Windows.Forms.Label();
             this.txtDestinatario = new System.Windows.Forms.TextBox();
             this.lbItem = new System.Windows.Forms.Label();
@@ -89,8 +84,8 @@ namespace GerentedeEmprestimos
             this.listaItems = new System.Windows.Forms.ListBox();
             this.listaDestinatarios = new System.Windows.Forms.ListBox();
             this.btSalvarAlteracoes = new System.Windows.Forms.Button();
-            this.lOGOUTToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.sairToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.rELATÓRIOToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.empréstimosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFeed)).BeginInit();
             this.SuspendLayout();
@@ -105,7 +100,8 @@ namespace GerentedeEmprestimos
             this.itemToolStripMenuItem,
             this.destinatToolStripMenuItem,
             this.USUÁRIOToolStripMenuItem,
-            this.lOGOUTToolStripMenuItem});
+            this.lOGOUTToolStripMenuItem,
+            this.rELATÓRIOToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(768, 24);
@@ -154,9 +150,24 @@ namespace GerentedeEmprestimos
             // cadToolStripMenuItem
             // 
             this.cadToolStripMenuItem.Name = "cadToolStripMenuItem";
-            this.cadToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.cadToolStripMenuItem.Size = new System.Drawing.Size(132, 22);
             this.cadToolStripMenuItem.Text = "Cadastrar";
             this.cadToolStripMenuItem.Click += new System.EventHandler(this.cadToolStripMenuItem_Click);
+            // 
+            // lOGOUTToolStripMenuItem
+            // 
+            this.lOGOUTToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.sairToolStripMenuItem});
+            this.lOGOUTToolStripMenuItem.Name = "lOGOUTToolStripMenuItem";
+            this.lOGOUTToolStripMenuItem.Size = new System.Drawing.Size(73, 20);
+            this.lOGOUTToolStripMenuItem.Text = "LOGOUT";
+            // 
+            // sairToolStripMenuItem
+            // 
+            this.sairToolStripMenuItem.Name = "sairToolStripMenuItem";
+            this.sairToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.sairToolStripMenuItem.Text = "Sair";
+            this.sairToolStripMenuItem.Click += new System.EventHandler(this.sairToolStripMenuItem_Click);
             // 
             // lbDestinatario
             // 
@@ -300,20 +311,19 @@ namespace GerentedeEmprestimos
             this.btSalvarAlteracoes.UseVisualStyleBackColor = true;
             this.btSalvarAlteracoes.Click += new System.EventHandler(this.button1_Click);
             // 
-            // lOGOUTToolStripMenuItem
+            // rELATÓRIOToolStripMenuItem
             // 
-            this.lOGOUTToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.sairToolStripMenuItem});
-            this.lOGOUTToolStripMenuItem.Name = "lOGOUTToolStripMenuItem";
-            this.lOGOUTToolStripMenuItem.Size = new System.Drawing.Size(73, 20);
-            this.lOGOUTToolStripMenuItem.Text = "LOGOUT";
+            this.rELATÓRIOToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.empréstimosToolStripMenuItem});
+            this.rELATÓRIOToolStripMenuItem.Name = "rELATÓRIOToolStripMenuItem";
+            this.rELATÓRIOToolStripMenuItem.Size = new System.Drawing.Size(92, 20);
+            this.rELATÓRIOToolStripMenuItem.Text = "RELATÓRIO";
             // 
-            // sairToolStripMenuItem
+            // empréstimosToolStripMenuItem
             // 
-            this.sairToolStripMenuItem.Name = "sairToolStripMenuItem";
-            this.sairToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.sairToolStripMenuItem.Text = "Sair";
-            this.sairToolStripMenuItem.Click += new System.EventHandler(this.sairToolStripMenuItem_Click);
+            this.empréstimosToolStripMenuItem.Name = "empréstimosToolStripMenuItem";
+            this.empréstimosToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
+            this.empréstimosToolStripMenuItem.Text = "Empréstimos";
             // 
             // FormPrincipal
             // 
@@ -347,14 +357,12 @@ namespace GerentedeEmprestimos
             this.ResumeLayout(false);
             this.PerformLayout();
 
-
         }
 
         
         private void FormPrincipal_Load(object sender, EventArgs e)
         {
-
-
+ 
             if (admAux == false)
             {
                 USUÁRIOToolStripMenuItem.Enabled = false;
@@ -362,7 +370,17 @@ namespace GerentedeEmprestimos
         
             checkEntregue.Enabled = false;
             btSalvarAlteracoes.Enabled = false;
-            dgvFeed.DataSource = EmprestimoAuxiliarDao.buscarEmprestimoAux(new EmprestimoAuxiliar());
+            dgvFeed.DataSource = EmprestimoDao.buscarEmprestimoAux(new EmprestimoAuxiliar());
+
+            if (EmprestimoDao.buscarEmprestimo(new Emprestimo()) != null)
+            {
+                dgvFeed.Columns[0].Width = 115;
+                dgvFeed.Columns[1].Width = 65;
+                dgvFeed.Columns[2].Width = 150;
+                dgvFeed.Columns[3].Width = 121;
+            }
+
+
                              
             comboFiltros.Items.Add("Todos");
             comboFiltros.Items.Add("Pendentes");
@@ -407,14 +425,9 @@ namespace GerentedeEmprestimos
 
             Emprestimo emprestimo = new Emprestimo(0, data, checkEntregue.Checked, id_destinatario, id_item);
 
-            EmprestimoAuxiliar eAux = new EmprestimoAuxiliar(0, emprestimo.DataEmprestimo, emprestimo.Entregue,
-                DestinatarioDao.buscarPorId(new Destinatario(emprestimo.FkDestinatario)).Nome,
-                ItemDao.buscarPorId(new Item(emprestimo.FkItem)).Descricao); 
-
             EmprestimoDao.salvarEmprestimo(emprestimo);
-            EmprestimoAuxiliarDao.salvar(eAux);
 
-            dgvFeed.DataSource = EmprestimoAuxiliarDao.buscarEmprestimoAux(new EmprestimoAuxiliar());
+            dgvFeed.DataSource = EmprestimoDao.buscarEmprestimoAux(new EmprestimoAuxiliar());
 
             Restaurar();
         }
@@ -519,25 +532,40 @@ namespace GerentedeEmprestimos
             if (e.RowIndex != -1)
             {
                 ArrayList emprestimosAux
-                     = dgvFeed.DataSource as ArrayList;
+                         = dgvFeed.DataSource as ArrayList;
 
-                EmprestimoAuxiliar emprestimoClicado = (EmprestimoAuxiliar)emprestimosAux[e.RowIndex];
-                id_emprestimo = emprestimoClicado.GetId();
+                EmprestimoAuxiliar emprestimoAuxClicado = (EmprestimoAuxiliar)emprestimosAux[e.RowIndex];
 
-                EmprestimoAuxiliar emprestimoAux = EmprestimoAuxiliarDao.buscarPorId(new EmprestimoAuxiliar(id_emprestimo));
+                id_emprestimo = emprestimoAuxClicado.GetId();
+
+                Emprestimo emprestimo = EmprestimoDao.buscarPorId(new Emprestimo(id_emprestimo));
+
+
+                txtDestinatario.Text = DestinatarioDao.buscarPorId(new Destinatario(emprestimo.FkDestinatario)).Nome;
+                txtItem.Text = ItemDao.buscarPorId(new Item(emprestimo.FkItem)).Descricao;
+                checkEntregue.Checked = emprestimo.Entregue;
+
+
+                /* ArrayList emprestimosAux
+                      = dgvFeed.DataSource as ArrayList;
+
+                 EmprestimoAuxiliar emprestimoClicado = (EmprestimoAuxiliar)emprestimosAux[e.RowIndex];
+                 id_emprestimo = emprestimoClicado.GetId();
+
+                 EmprestimoAuxiliar emprestimoAux = EmprestimoAuxiliarDao.buscarPorId(new EmprestimoAuxiliar(id_emprestimo));
 
                 
-                txtDestinatario.Text = emprestimoAux.Destinatario;
-                txtItem.Text = emprestimoAux.Item;
-                checkEntregue.Checked = emprestimoAux.Entregue;
+                 txtDestinatario.Text = emprestimoAux.Destinatario;
+                 txtItem.Text = emprestimoAux.Item;
+                 checkEntregue.Checked = emprestimoAux.Entregue;*/
 
             }
         }
         
         private void button1_Click(object sender, EventArgs e)
         {
-            EmprestimoAuxiliarDao.salvar(new EmprestimoAuxiliar(id_emprestimo, checkEntregue.Checked));
-            dgvFeed.DataSource = EmprestimoAuxiliarDao.buscarEmprestimoAux(new EmprestimoAuxiliar());
+           EmprestimoDao.salvarEmprestimo(new Emprestimo(id_emprestimo, checkEntregue.Checked));
+           dgvFeed.DataSource = EmprestimoDao.buscarEmprestimoAux(new EmprestimoAuxiliar());
 
             btEmprestar.Enabled = true;
             Restaurar();
@@ -550,7 +578,7 @@ namespace GerentedeEmprestimos
         {
 
             //Não está funcionando ainda..
-            
+
         }
 
     }

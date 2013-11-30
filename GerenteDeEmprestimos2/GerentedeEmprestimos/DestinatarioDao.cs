@@ -115,6 +115,7 @@ namespace Dao
 
                 // Libera recursos de memória.
                 leitor.Close();
+                
             }
 
             return destinatarios;
@@ -151,9 +152,10 @@ namespace Dao
                  (int.Parse(leitor["id"].ToString())),leitor["rg"].ToString(),
                         leitor["nome"].ToString(), leitor["telefone"].ToString(), leitor["email"].ToString());
 
-                    leitor.Close();
+                   
                 }
 
+               leitor.Close();
             }
 
 
@@ -192,9 +194,10 @@ namespace Dao
                     resposta = new Destinatario(int.Parse(leitor["id"].ToString()),leitor["rg"].ToString(),
                         leitor["nome"].ToString(),leitor["telefone"].ToString(), leitor["email"].ToString());
 
-                    leitor.Close();
+                    
                 }
- 
+
+               leitor.Close();
             }
 
 

@@ -29,6 +29,7 @@ namespace GerentedeEmprestimos
 
         private FormPrincipal fp;
         private Label lbRg;
+        private Button btPesquisar;
 
         private int id_destinatario;
 
@@ -58,6 +59,7 @@ namespace GerentedeEmprestimos
             this.txtTelefone = new System.Windows.Forms.TextBox();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.lbRg = new System.Windows.Forms.Label();
+            this.btPesquisar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDestinatario)).BeginInit();
             this.SuspendLayout();
             // 
@@ -65,9 +67,9 @@ namespace GerentedeEmprestimos
             // 
             this.dgvDestinatario.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgvDestinatario.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvDestinatario.Location = new System.Drawing.Point(12, 12);
+            this.dgvDestinatario.Location = new System.Drawing.Point(15, 12);
             this.dgvDestinatario.Name = "dgvDestinatario";
-            this.dgvDestinatario.Size = new System.Drawing.Size(294, 237);
+            this.dgvDestinatario.Size = new System.Drawing.Size(537, 222);
             this.dgvDestinatario.TabIndex = 0;
             this.dgvDestinatario.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDestinatario_CellClick);
             this.dgvDestinatario.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDestinatario_CellDoubleClick);
@@ -75,9 +77,9 @@ namespace GerentedeEmprestimos
             // txtNome
             // 
             this.txtNome.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNome.Location = new System.Drawing.Point(15, 280);
+            this.txtNome.Location = new System.Drawing.Point(200, 273);
             this.txtNome.Name = "txtNome";
-            this.txtNome.Size = new System.Drawing.Size(130, 22);
+            this.txtNome.Size = new System.Drawing.Size(156, 22);
             this.txtNome.TabIndex = 1;
             this.txtNome.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtNome_KeyUp);
             // 
@@ -85,7 +87,7 @@ namespace GerentedeEmprestimos
             // 
             this.lbNome.AutoSize = true;
             this.lbNome.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbNome.Location = new System.Drawing.Point(12, 261);
+            this.lbNome.Location = new System.Drawing.Point(12, 252);
             this.lbNome.Name = "lbNome";
             this.lbNome.Size = new System.Drawing.Size(46, 16);
             this.lbNome.TabIndex = 2;
@@ -96,7 +98,7 @@ namespace GerentedeEmprestimos
             this.btCadastrar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btCadastrar.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.btCadastrar.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btCadastrar.Location = new System.Drawing.Point(12, 368);
+            this.btCadastrar.Location = new System.Drawing.Point(444, 281);
             this.btCadastrar.Name = "btCadastrar";
             this.btCadastrar.Size = new System.Drawing.Size(108, 23);
             this.btCadastrar.TabIndex = 3;
@@ -109,7 +111,7 @@ namespace GerentedeEmprestimos
             this.btAlterar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btAlterar.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.btAlterar.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btAlterar.Location = new System.Drawing.Point(83, 397);
+            this.btAlterar.Location = new System.Drawing.Point(423, 333);
             this.btAlterar.Name = "btAlterar";
             this.btAlterar.Size = new System.Drawing.Size(139, 23);
             this.btAlterar.TabIndex = 4;
@@ -122,7 +124,7 @@ namespace GerentedeEmprestimos
             this.btExcluir.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btExcluir.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.btExcluir.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btExcluir.Location = new System.Drawing.Point(196, 368);
+            this.btExcluir.Location = new System.Drawing.Point(444, 308);
             this.btExcluir.Name = "btExcluir";
             this.btExcluir.Size = new System.Drawing.Size(108, 23);
             this.btExcluir.TabIndex = 5;
@@ -133,7 +135,7 @@ namespace GerentedeEmprestimos
             // lbTelefone
             // 
             this.lbTelefone.AutoSize = true;
-            this.lbTelefone.Location = new System.Drawing.Point(168, 305);
+            this.lbTelefone.Location = new System.Drawing.Point(197, 308);
             this.lbTelefone.Name = "lbTelefone";
             this.lbTelefone.Size = new System.Drawing.Size(60, 15);
             this.lbTelefone.TabIndex = 7;
@@ -142,7 +144,7 @@ namespace GerentedeEmprestimos
             // lbEmail
             // 
             this.lbEmail.AutoSize = true;
-            this.lbEmail.Location = new System.Drawing.Point(168, 261);
+            this.lbEmail.Location = new System.Drawing.Point(198, 252);
             this.lbEmail.Name = "lbEmail";
             this.lbEmail.Size = new System.Drawing.Size(45, 15);
             this.lbEmail.TabIndex = 8;
@@ -150,38 +152,49 @@ namespace GerentedeEmprestimos
             // 
             // txtRg
             // 
-            this.txtRg.Location = new System.Drawing.Point(12, 325);
+            this.txtRg.Location = new System.Drawing.Point(12, 327);
             this.txtRg.Name = "txtRg";
-            this.txtRg.Size = new System.Drawing.Size(133, 21);
+            this.txtRg.Size = new System.Drawing.Size(153, 21);
             this.txtRg.TabIndex = 9;
             // 
             // txtTelefone
             // 
-            this.txtTelefone.Location = new System.Drawing.Point(171, 325);
+            this.txtTelefone.Location = new System.Drawing.Point(201, 327);
             this.txtTelefone.Name = "txtTelefone";
-            this.txtTelefone.Size = new System.Drawing.Size(133, 21);
+            this.txtTelefone.Size = new System.Drawing.Size(155, 21);
             this.txtTelefone.TabIndex = 10;
             // 
             // txtEmail
             // 
-            this.txtEmail.Location = new System.Drawing.Point(171, 280);
+            this.txtEmail.Location = new System.Drawing.Point(12, 273);
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(133, 21);
+            this.txtEmail.Size = new System.Drawing.Size(156, 21);
             this.txtEmail.TabIndex = 11;
             // 
             // lbRg
             // 
             this.lbRg.AutoSize = true;
             this.lbRg.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbRg.Location = new System.Drawing.Point(12, 305);
+            this.lbRg.Location = new System.Drawing.Point(12, 307);
             this.lbRg.Name = "lbRg";
             this.lbRg.Size = new System.Drawing.Size(35, 16);
             this.lbRg.TabIndex = 12;
             this.lbRg.Text = "RG: ";
             // 
+            // btPesquisar
+            // 
+            this.btPesquisar.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btPesquisar.Location = new System.Drawing.Point(444, 252);
+            this.btPesquisar.Name = "btPesquisar";
+            this.btPesquisar.Size = new System.Drawing.Size(108, 23);
+            this.btPesquisar.TabIndex = 13;
+            this.btPesquisar.Text = "Pesquisar";
+            this.btPesquisar.UseVisualStyleBackColor = true;
+            // 
             // FormDestinatario
             // 
-            this.ClientSize = new System.Drawing.Size(323, 432);
+            this.ClientSize = new System.Drawing.Size(574, 360);
+            this.Controls.Add(this.btPesquisar);
             this.Controls.Add(this.lbRg);
             this.Controls.Add(this.txtEmail);
             this.Controls.Add(this.txtTelefone);
@@ -305,5 +318,6 @@ namespace GerentedeEmprestimos
 
             Restaurar();
         }
+
     }
 }

@@ -16,7 +16,7 @@ namespace GerentedeEmprestimos
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormUsuario());
+            Application.Run(new FormPrincipal());
         }
     }
 }

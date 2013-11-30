@@ -9,49 +9,41 @@ namespace Entidade
 {
     class EmprestimoAuxiliar
     {
-        private int id;
+
         private DateTime dataEmprestimo;
         private bool entregue;
         private string destinatario;
         private string item;
+        private int id;
 
         public EmprestimoAuxiliar()
-        { 
+        {
+            destinatario = "";
         }
 
-        public EmprestimoAuxiliar(int id, bool entregue)
+        public EmprestimoAuxiliar(bool entregue)
         {
-            SetId(id);
             Entregue = entregue;
         }
 
-        public EmprestimoAuxiliar(int id)
+        public EmprestimoAuxiliar(int id, string destinatario, DateTime dataEmprestimo, bool entregue, string item)
         {
             SetId(id);
-        }
-
-        public EmprestimoAuxiliar(int id, DateTime dataEmprestimo, bool entregue, string destinatario, string item)
-        {
-
-
-            SetId(id);          
+            Destinatario = destinatario;
             DataEmprestimo = dataEmprestimo;
             Entregue = entregue;
-            Destinatario = destinatario;
             Item = item;
         }
 
+        public void SetId(int id)
+        {
+            this.id = id;
+        }
 
-
-         public void SetId(int id)
-         {
-             this.id = id;
-         }
-
-         public int GetId()
-         {
-             return id;
-         }
+        public int GetId()
+        {
+            return id;
+        }
 
         public DateTime DataEmprestimo
         {

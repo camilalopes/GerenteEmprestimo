@@ -125,9 +125,9 @@ namespace Dao
                     resposta = new Emprestimo(int.Parse(leitor["id"].ToString()), DateTime.Parse(leitor["dataemprestimo"].ToString()),
                         bool.Parse(leitor["entregue"].ToString()),int.Parse(leitor["fk_destinatario"].ToString()), int.Parse(leitor["fk_item"].ToString()));
 
-                    leitor.Close();
+                    
                 }
-
+                leitor.Close();
             }
 
             return resposta;
@@ -149,9 +149,9 @@ namespace Dao
 
                 cmd.Prepare();
 
-                // Execução da sentença SQL, com dados de retorno
-                // associados a um objeto para posterior leitura.
-                MySqlDataReader leitor = cmd.ExecuteReader();
+            // Execução da sentença SQL, com dados de retorno
+           // associados a um objeto para posterior leitura.
+           MySqlDataReader leitor = cmd.ExecuteReader();
 
             while (leitor.Read())
             {
@@ -167,5 +167,48 @@ namespace Dao
             return emprestimos;
             
         }
+
+
+        public static ArrayList buscarEmprestimoAux(EmprestimoAuxiliar eAux)
+        {
+            ArrayList emprestimosAux = null;
+
+            if (eAux.Destinatario != null)
+            {
+                emprestimosAux = new ArrayList();
+
+                MySqlCommand cmd;
+                string sql = "select e.id, d.nome as nome, e.dataemprestimo as dataemprestimo, e.entregue as entregue, i.descricao as descricao "
+                + "from destinatario d inner join emprestimo e on d.id = e.fk_destinatario inner join item i on i.id =e.fk_item;";
+
+                // Associação do comando à conexão.
+                cmd = new MySqlCommand(sql, BancoDados.recuperarConexao());
+
+                // Preparação da consulta.
+                cmd.Prepare();
+
+                // Execução da sentença SQL, com dados de retorno
+                // associados a um objeto para posterior leitura.
+                MySqlDataReader leitor = cmd.ExecuteReader();
+
+                while (leitor.Read())
+                {
+                    emprestimosAux.Add(
+                        new EmprestimoAuxiliar(int.Parse(leitor["id"].ToString()),
+                            leitor["nome"].ToString(),
+                            DateTime.Parse(leitor["dataemprestimo"].ToString()),
+                            bool.Parse(leitor["entregue"].ToString()),
+                            leitor["descricao"].ToString()));
+                }
+
+                // Libera recursos de memória.
+                leitor.Close();
+            }
+
+
+            return emprestimosAux;
+
+        }
+
     }
 }

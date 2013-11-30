@@ -79,16 +79,13 @@ namespace Dao
                     // adiciona o respectivo objeto Destinatario, construído
                     // com os dados de retorno, à coleção de destinatarios.
                     resposta=( new Usuario(leitor["login"].ToString(), leitor["senha"].ToString(), bool.Parse(leitor["adm"].ToString())));
-
-                    // Libera recursos de memória.
-                    leitor.Close();
+                    
                 }
+
+                leitor.Close();
+             
  
             }
-
-
-
-
 
             return resposta;
 

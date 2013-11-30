@@ -90,3 +90,5 @@ C:\Users\Camila\Desktop\GerenteEmprestimo\GerenteDeEmprestimos2\GerentedeEmprest
 C:\Users\Camila\Desktop\GerenteEmprestimo\GerenteDeEmprestimos2\GerentedeEmprestimos\obj\Debug\GerentedeEmprestimos.FormUsuario.resources
 C:\Users\Camila\Desktop\GerenteEmprestimo\GerenteDeEmprestimos2\GerentedeEmprestimos\obj\Debug\GerentedeEmprestimos.Properties.Resources.resources
 C:\Users\Camila\Desktop\GerenteEmprestimo\GerenteDeEmprestimos2\GerentedeEmprestimos\obj\Debug\GerentedeEmprestimos.csproj.GenerateResource.Cache
+E:\GerenteDeEmprestimos2\GerentedeEmprestimos\obj\Debug\GerentedeEmprestimos.FormRelatorio.resources
+D:\GerenteDeEmprestimos2\GerentedeEmprestimos\obj\Debug\GerentedeEmprestimos.FormRelatorio.resources

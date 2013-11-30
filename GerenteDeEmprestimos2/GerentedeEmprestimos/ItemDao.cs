@@ -74,7 +74,7 @@ namespace Dao
 
                 MySqlCommand cmd;
 
-               
+
                 string sql = "SELECT * FROM " + TABELA
                     + " WHERE descricao LIKE @descricao;";
 
@@ -146,9 +146,9 @@ namespace Dao
                     int.Parse(leitor["id"].ToString()),
                     leitor["descricao"].ToString());
 
-                    leitor.Close();
+                    
                 }
-
+                leitor.Close();
             }
 
 
@@ -188,15 +188,44 @@ namespace Dao
                     int.Parse(leitor["id"].ToString()),
                     leitor["descricao"].ToString());
 
-                    leitor.Close();
+                    
                 }
-
+                leitor.Close();
             }
 
 
             return resposta;
 
         }
+
+        public static void excluirItem(Item item)
+        {
+            // Só é possível excluir uma tarefa cujo id
+            // esteja especificado.
+            if (item.GetId() != 0)
+            {
+                MySqlCommand cmd;
+
+                // MUITA ATENÇÃO nos espaçamentos entre comandos.
+                string sql = "DELETE FROM " + TABELA
+                    + " WHERE id = @id;";
+
+                // Associação do comando à conexão.
+                cmd = new MySqlCommand(sql,
+                    BancoDados.recuperarConexao());
+
+                // Inserção de valores nos parâmetros.
+                cmd.Parameters.AddWithValue("@id",
+                    item.GetId());
+
+                // Preparação da consulta.
+                cmd.Prepare();
+
+                // Execução da sentença SQL sem dados de retorno.
+                cmd.ExecuteNonQuery();
+            }
+        }
+
 
     }
 }

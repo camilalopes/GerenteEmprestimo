@@ -16,13 +16,6 @@ namespace GerentedeEmprestimos
     {
        private FormPrincipal fp;
 
-        /*public FormUsuario(FormPrincipal fp)
-        {
-            InitializeComponent();
-
-            this.fp = fp;
-        }*/
-
 
         public FormUsuario()
         {
@@ -32,13 +25,7 @@ namespace GerentedeEmprestimos
         private void btLogar_Click(object sender, EventArgs e)
         {
 
-            Usuario resposta = UsuarioDao.buscarUsuario(new Usuario(txtLogin.Text, txtSenha.Text));
-          
-
-            //FormPrincipal fp = new FormPrincipal();
-           // fp.conferirAdm(resposta.Adm);
-           
-
+            Usuario resposta = UsuarioDao.buscarUsuario(new Usuario(txtLogin.Text, txtSenha.Text));         
 
             if (resposta != null)
             {

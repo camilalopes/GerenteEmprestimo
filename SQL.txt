@@ -6,9 +6,7 @@ create table item(id int(10) unsigned not null auto_increment, descricao varchar
 
 create table destinatario(id int(10) unsigned not null auto_increment, rg varchar(15), nome varchar(100) not null, telefone varchar(15), email varchar(80), primary key(id))ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
 
-create table emprestimo(id int(10) unsigned not null auto_increment, dataemprestimo datetime, entregue boolean, fk_destinatario int(10) unsigned not null, fk_item int(10) unsigned not null,primary key (id), key fk_destinatario (fk_destinatario), CONSTRAINT emprestimo_ibfk_1 foreign key (fk_destinatario) references destinatario(id), key fk_item (fk_item), CONSTRAINT emprestimo_ibfk_2 foreign key (fk_item) references item(id))ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
-
-create table emprestimoAuxiliar(id int(10) unsigned not null auto_increment primary key, dataemprestimo datetime, entregue boolean, destinatario varchar(60), item varchar(40))ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
+create table emprestimo(id int(10) unsigned not null auto_increment, dataemprestimo datetime, entregue boolean, fk_destinatario int(10) unsigned not null  references destinatario on delete set null, fk_item int(10) unsigned not null references item on delete set null, primary key(id),key (fk_destinatario),key (fk_item))ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
 
 create table usuario(login varchar(15) primary key, senha varchar(15), nome varchar(50), telefone varchar(20), email varchar(40), adm bool);
 
