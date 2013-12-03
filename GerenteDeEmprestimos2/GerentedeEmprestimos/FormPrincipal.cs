@@ -70,6 +70,8 @@ namespace GerentedeEmprestimos
             this.cadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lOGOUTToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sairToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.rELATÓRIOToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.empréstimosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lbDestinatario = new System.Windows.Forms.Label();
             this.txtDestinatario = new System.Windows.Forms.TextBox();
             this.lbItem = new System.Windows.Forms.Label();
@@ -84,8 +86,6 @@ namespace GerentedeEmprestimos
             this.listaItems = new System.Windows.Forms.ListBox();
             this.listaDestinatarios = new System.Windows.Forms.ListBox();
             this.btSalvarAlteracoes = new System.Windows.Forms.Button();
-            this.rELATÓRIOToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.empréstimosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFeed)).BeginInit();
             this.SuspendLayout();
@@ -165,9 +165,24 @@ namespace GerentedeEmprestimos
             // sairToolStripMenuItem
             // 
             this.sairToolStripMenuItem.Name = "sairToolStripMenuItem";
-            this.sairToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.sairToolStripMenuItem.Size = new System.Drawing.Size(99, 22);
             this.sairToolStripMenuItem.Text = "Sair";
             this.sairToolStripMenuItem.Click += new System.EventHandler(this.sairToolStripMenuItem_Click);
+            // 
+            // rELATÓRIOToolStripMenuItem
+            // 
+            this.rELATÓRIOToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.empréstimosToolStripMenuItem});
+            this.rELATÓRIOToolStripMenuItem.Name = "rELATÓRIOToolStripMenuItem";
+            this.rELATÓRIOToolStripMenuItem.Size = new System.Drawing.Size(92, 20);
+            this.rELATÓRIOToolStripMenuItem.Text = "RELATÓRIO";
+            // 
+            // empréstimosToolStripMenuItem
+            // 
+            this.empréstimosToolStripMenuItem.Name = "empréstimosToolStripMenuItem";
+            this.empréstimosToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
+            this.empréstimosToolStripMenuItem.Text = "Empréstimos";
+            this.empréstimosToolStripMenuItem.Click += new System.EventHandler(this.empréstimosToolStripMenuItem_Click);
             // 
             // lbDestinatario
             // 
@@ -310,20 +325,6 @@ namespace GerentedeEmprestimos
             this.btSalvarAlteracoes.Text = "Salvar Alterações";
             this.btSalvarAlteracoes.UseVisualStyleBackColor = true;
             this.btSalvarAlteracoes.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // rELATÓRIOToolStripMenuItem
-            // 
-            this.rELATÓRIOToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.empréstimosToolStripMenuItem});
-            this.rELATÓRIOToolStripMenuItem.Name = "rELATÓRIOToolStripMenuItem";
-            this.rELATÓRIOToolStripMenuItem.Size = new System.Drawing.Size(92, 20);
-            this.rELATÓRIOToolStripMenuItem.Text = "RELATÓRIO";
-            // 
-            // empréstimosToolStripMenuItem
-            // 
-            this.empréstimosToolStripMenuItem.Name = "empréstimosToolStripMenuItem";
-            this.empréstimosToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
-            this.empréstimosToolStripMenuItem.Text = "Empréstimos";
             // 
             // FormPrincipal
             // 
@@ -515,9 +516,9 @@ namespace GerentedeEmprestimos
 
         private void btFiltrar_Click(object sender, EventArgs e)
         {
-            if (comboFiltros.SelectedItem == "Pendentes")
+            if (comboFiltros.SelectedItem.ToString() == "Pendentes")
             {
-                dgvFeed.DataSource = EmprestimoDao.buscarPendentes(new Emprestimo());
+                // dgvFeed.DataSource = EmprestimoDao.buscarPendentes(new Emprestimo());
             }
             else
                 dgvFeed.DataSource = EmprestimoDao.buscarEmprestimo(new Emprestimo());
@@ -579,6 +580,12 @@ namespace GerentedeEmprestimos
 
             //Não está funcionando ainda..
 
+        }
+
+        private void empréstimosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormRelatorio fr = new FormRelatorio();
+            fr.Show();
         }
 
     }

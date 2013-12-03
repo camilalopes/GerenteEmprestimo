@@ -134,13 +134,16 @@ namespace Dao
 
         }
 
-        public static ArrayList buscarPendentes(Emprestimo emprestimo)
+        public static ArrayList buscarPendentes(EmprestimoAuxiliar eAux)
         {
-            ArrayList emprestimos = new ArrayList();
+            ArrayList emprestimosAux = new ArrayList();
 
             MySqlCommand cmd;
 
-            string sql = "SELECT * FROM " + TABELA
+            string sql = "SELECT e.id, d.nome AS nome, e.dataemprestimo as dataemprestimo,"
+                    + "e.entregue as entregue, i.descricao as descricao"
+                    + " FROM destinatario d inner join emprestimo e on d.id = e.fk_destinatario"
+                    + " inner join item i on i.id = e.fk_item"
                     + " WHERE entregue = false;";
 
                 // Associação do comando à conexão.
@@ -155,16 +158,16 @@ namespace Dao
 
             while (leitor.Read())
             {
-              
-                emprestimos.Add(
-                    new Emprestimo(int.Parse(leitor["id"].ToString()), DateTime.Parse(leitor["dataemprestimo"].ToString()),
-                        bool.Parse(leitor["entregue"].ToString()),int.Parse(leitor["fk_destinatario"].ToString()), int.Parse(leitor["fk_item"].ToString())));
+
+                emprestimosAux.Add(new EmprestimoAuxiliar(int.Parse(leitor["id"].ToString()),
+                leitor["nome"].ToString(), DateTime.Parse(leitor["dataemprestimo"].ToString()),
+                bool.Parse(leitor["entregue"].ToString()), leitor["descricao"].ToString()));
             }
 
 
             leitor.Close();
 
-            return emprestimos;
+            return emprestimosAux;
             
         }
 

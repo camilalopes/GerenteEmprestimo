@@ -77,7 +77,7 @@ namespace GerentedeEmprestimos
             // txtNome
             // 
             this.txtNome.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNome.Location = new System.Drawing.Point(200, 273);
+            this.txtNome.Location = new System.Drawing.Point(15, 271);
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(156, 22);
             this.txtNome.TabIndex = 1;
@@ -166,7 +166,7 @@ namespace GerentedeEmprestimos
             // 
             // txtEmail
             // 
-            this.txtEmail.Location = new System.Drawing.Point(12, 273);
+            this.txtEmail.Location = new System.Drawing.Point(201, 268);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(156, 21);
             this.txtEmail.TabIndex = 11;
